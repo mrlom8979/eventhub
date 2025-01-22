@@ -20,7 +20,7 @@ public:
   virtual event_type get_event_type() const = 0;
   virtual const char* get_name() const = 0;
   virtual int get_category_flags() const = 0;
-  virtual const char* to_string() const { return get_name(); }
+  virtual std::string to_string() const { return get_name(); }
 
   bool is_in_category(event_category category) {
     return get_category_flags() & category;

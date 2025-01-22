@@ -5,6 +5,7 @@
 #pragma once
 
 #include "pch.h"
+#include "eventhub/base.h"
 
 namespace eventhub {
 
