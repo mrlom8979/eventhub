@@ -8,7 +8,7 @@
 #include "eventhub/event.h"
 #include "eventhub/event_type.h"
 #include "eventhub/event_category.h"
-#include "eventhub/key_code.h"
+#include "eventhub/mouse_code.h"
 
 namespace eventhub {
 
