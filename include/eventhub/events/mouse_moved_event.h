@@ -5,14 +5,13 @@
 #pragma once
 
 #include "pch.h"
-#include "eventhub/mouse_button_event.h"
 #include "eventhub/event_type.h"
 #include "eventhub/event_category.h"
+#include "eventhub/events/mouse_button_event.h"
 
 namespace eventhub {
 
-class mouse_moved_event : public event
-{
+class mouse_moved_event : public event {
 public:
   mouse_moved_event(const float x, const float y)
   : m_mouse_x(x), m_mouse_y(y) {}
@@ -21,10 +20,10 @@ public:
   float get_y() const { return m_mouse_y; }
 
   std::string to_string() const override {
-    char buffer[BUFFER_SIZE];
+    char buffer[EVENT_BUFFER_SIZE];
     snprintf(buffer,
-             BUFFER_SIZE,
-             "mouse_moved_event: %d, %d",
+             EVENT_BUFFER_SIZE,
+             "mouse_moved_event: %f, %f",
              m_mouse_x, m_mouse_y
              );
     return std::string(buffer);

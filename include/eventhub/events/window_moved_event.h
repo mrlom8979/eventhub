@@ -20,9 +20,9 @@ public:
   int get_y() const { return m_y; }
 
   std::string to_string() const override {
-    char buffer[BUFFER_SIZE];
+    char buffer[EVENT_BUFFER_SIZE];
     snprintf(buffer,
-             BUFFER_SIZE,
+             EVENT_BUFFER_SIZE,
              "window_moved_event: %d, %d",
              m_x,
              m_y

@@ -21,9 +21,9 @@ public:
   unsigned int get_height() const { return m_height; }
 
   std::string to_string() const override {
-    char buffer[BUFFER_SIZE];
+    char buffer[EVENT_BUFFER_SIZE];
     snprintf(buffer,
-             BUFFER_SIZE,
+             EVENT_BUFFER_SIZE,
              "window_resize_event: %d, %d",
              m_width,
              m_height

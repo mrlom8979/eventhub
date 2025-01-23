@@ -19,13 +19,9 @@ enum class event_type
   JOYSTICK_BUTTON_PRESSED, JOYSTICK_BUTTON_RELEASED, JOYSTICK_AXIS_MOVED,
 };
 
-#define EVENT_CLASS_TYPE(type)                                                        \
-  do {                                                                                \
-    static event_type get_static_type() { return event_type::type; }                  \
-    virtual event_type get_event_type() const override { return get_static_type(); }  \
-    virtual const char* get_name() const override { return #type; }                   \
-  } while (0)
-
-}
+#define EVENT_CLASS_TYPE(type)                                                      \
+  static event_type get_static_type() { return event_type::type; }                  \
+  virtual event_type get_event_type() const override { return get_static_type(); }  \
+  virtual const char* get_name() const override { return #type; }
 
 } // namespace eventhub

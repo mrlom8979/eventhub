@@ -8,10 +8,6 @@
 
 namespace eventhub {
 
-using key_code = uint16_t;
-
-namespace key {
-
 using mouse_code = uint16_t;
 
 namespace mouse {

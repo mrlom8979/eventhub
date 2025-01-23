@@ -6,29 +6,27 @@
 
 #include "pch.h"
 #include "eventhub/base.h"
-#include "eventhub/key_event.h"
 #include "eventhub/event_type.h"
 #include "eventhub/event_category.h"
 #include "eventhub/key_code.h"
+#include "eventhub/events/key_event.h"
 
 namespace eventhub {
 
-class key_pressed_event : public key_event
-{
+class key_pressed_event : public key_event {
 public:
-  key_pressed_event(const key_code code, bool isRepeat = false)
-  : key_event(code), m_is_repeat(isRepeat) {}
+  key_pressed_event(const key_code code, bool is_repeat = false)
+  : key_event(code), m_is_repeat(is_repeat) {}
 
   bool is_repeat() const { return m_is_repeat; }
 
   std::string to_string() const override {
-    char buffer[BUFFER_SIZE];
+    char buffer[EVENT_BUFFER_SIZE];
     snprintf(buffer,
-             BUFFER_SIZE,
+             EVENT_BUFFER_SIZE,
              "key_pressed_event: %d (repeat = %s)",
-             key_code,
-             is_repeat ? "true" : "false"
-             );
+             m_key_code,
+             m_is_repeat ? "true" : "false");
    return std::string(buffer);
   }
 

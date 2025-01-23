@@ -6,23 +6,22 @@
 
 #include "pch.h"
 #include "eventhub/base.h"
-#include "eventhub/key_event.h"
 #include "eventhub/event_type.h"
 #include "eventhub/event_category.h"
 #include "eventhub/key_code.h"
+#include "eventhub/events/key_event.h"
 
 namespace eventhub {
 
-class key_typed_event : public key_event
-{
+class key_typed_event : public key_event {
 public:
   key_typed_event(const key_code code)
   : key_event(code) {}
 
   std::string to_string() const override {
-    char buffer[BUFFER_SIZE];
+    char buffer[EVENT_BUFFER_SIZE];
     snprintf(buffer,
-             BUFFER_SIZE,
+             EVENT_BUFFER_SIZE,
              "key_typed_event: %d",
              m_key_code
              );

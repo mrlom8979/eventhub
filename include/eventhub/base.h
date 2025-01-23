@@ -5,4 +5,4 @@
 #pragma once
 
 #define EVENT_BIT(x) (1 << x)
-#define BUFFER_SIZE 256
+#define EVENT_BUFFER_SIZE 256

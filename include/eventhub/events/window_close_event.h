@@ -11,8 +11,7 @@
 
 namespace eventhub {
 
-class window_close_event : public event
-{
+class window_close_event : public event {
 public:
   window_close_event() = default;
 
