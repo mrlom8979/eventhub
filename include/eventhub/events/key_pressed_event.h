@@ -8,14 +8,14 @@
 #include "eventhub/base.h"
 #include "eventhub/event_type.h"
 #include "eventhub/event_category.h"
-#include "eventhub/key_code.h"
+// #include "eventhub/key.h"
 #include "eventhub/events/key_event.h"
 
 namespace eventhub {
 
 class key_pressed_event : public key_event {
 public:
-  key_pressed_event(const key_code code, bool is_repeat = false)
+  key_pressed_event(const int code, bool is_repeat = false)
   : key_event(code), m_is_repeat(is_repeat) {}
 
   bool is_repeat() const { return m_is_repeat; }

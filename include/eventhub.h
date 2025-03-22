@@ -13,9 +13,9 @@
 #include "eventhub/event_dispatcher.h"
 
 // key, mouse codes
-#include "eventhub/key_code.h"
-#include "eventhub/modifier_code.h"
-#include "eventhub/mouse_code.h"
+#include "eventhub/key.h"
+#include "eventhub/mods.h"
+#include "eventhub/mouse.h"
 
 // key events
 #include "eventhub/events/key_event.h"
